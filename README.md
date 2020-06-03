@@ -1,6 +1,6 @@
 # Machine Learning with Golang (Classification)
 
-This repository provides an Golang implementation from scratch to solve a classification problem using the K-Nearest Neighbour algorithm.
+This repository provides a Golang implementation from scratch to solve a classification problem using the K-Nearest Neighbour algorithm.
 
 It can also be used as a standard project layout for machine learning projects, because it combines the
 [Standard Go Project Layout](https://github.com/golang-standards/project-layout) and 
