@@ -86,9 +86,9 @@ Finally, we found out that the Sepal length and Sepal has a very high accuracy o
 ## Predict
 
 The final model will be stored at <code>models/iris_knn.pb</code>.
-To predict a single feature combination of Sepal length (x) and Sepal width (y) use the following command:
+To predict a single feature combination of Sepal length (x) and Sepal width (y) with K=3 use the following command:
 
-    ./predict.bin -x 3 -y 4
+    ./predict.bin -x 3 -y 4 -k 3
     
     K-Nearest Neighbour - K: 3, Given: [3 4], Predicted: Iris-setosa
     Prediction time: 152.338µs
