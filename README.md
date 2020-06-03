@@ -61,7 +61,7 @@ The corresponding source of the command could be found [here](cmd/gather_and_org
 
 ## Evaluate the Model
 
-The K-Nearest Neighbour is a lazy algorithm. It doesn't learn via training instead it "memorizes" the training dataset instead.
+The K-Nearest Neighbour is a lazy algorithm. It doesn't learn via training, it "memorizes" the training dataset instead.
 Thus, we don't call the following step model training. We evaluate the parameter k and feature-combinations in the Iris flower data set.
 In addition to that we use [Standardization](pkg/floats/scale.go) to scale the values down between 0 and 1 and
 zero values are replaced by the [Mean](pkg/floats/central_tendency.go). 
