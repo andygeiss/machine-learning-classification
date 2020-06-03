@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option go_package = "internal/api";
+
+message InterimData {
+  message Record {
+    double SepalLength = 1;
+    double SepalWidth = 2;
+    double PetalLength = 3;
+    double PetalWidth = 4;
+    string Species = 5;
+  }
+  repeated Record records = 1;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package = "internal/api";
+
+message ProcessedData {
+  double size = 1;
+  int64 timestamp = 2;
+  repeated double petalLength = 3;
+  repeated double petalWidth = 4;
+  repeated double sepalLength = 5;
+  repeated double sepalWidth = 6;
+  repeated double species = 7;
+}
