@@ -93,4 +93,4 @@ To predict a single feature combination of Sepal length (x) and Sepal width (y) 
     K-Nearest Neighbour - K: 3, Given: [3 4], Predicted: Iris-setosa
     Prediction time: 152.338µs
 
-The output will shows the predicted species.
+The corresponding source of the command could be found [here](cmd/predict/main.go).
