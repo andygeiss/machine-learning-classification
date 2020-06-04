@@ -21,7 +21,7 @@ func TestKNN_Should_Be_1(t *testing.T) {
 	// Finally classify the values
 	in := []float64{3, 4}
 	floats.MinMaxScale(in)
-	observed := floats.Knn(in, x, y, z, 1)
+	observed := floats.Knn(in, x, y, z, 1, floats.ManhattanDistance)
 	assert.That(t, observed, 1)
 }
 
@@ -31,6 +31,6 @@ func BenchmarkKnn_1000000(b *testing.B) {
 	z := randomValues(1000000)
 	in := []float64{5, 1}
 	for i := 0; i < b.N; i++ {
-		floats.Knn(in, x, y, z, 1)
+		floats.Knn(in, x, y, z, 1, floats.ManhattanDistance)
 	}
 }

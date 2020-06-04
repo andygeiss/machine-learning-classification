@@ -5,15 +5,25 @@ import (
 	"sort"
 )
 
+// ManhattanDistance ...
+func ManhattanDistance(x1, x2, y1, y2 float64) float64 {
+	return math.Abs(x1-x2) + math.Abs(y1-y2)
+}
+
+// EuclideanDistance ...
+func EuclideanDistance(x1, x2, y1, y2 float64) float64 {
+	return math.Sqrt(math.Pow(x1-x2, 2) + math.Pow(y1-y2, 2))
+}
+
 // Knn ...
-func Knn(in []float64, x, y, classifier []float64, k int) float64 {
+func Knn(in []float64, x, y, classifier []float64, k int, distanceFn func(x1, x2, y1, y2 float64) float64) float64 {
 	// Calculate the distance between the input (in[0], in[1]) and each data point (x[i], y[i]) for i .. n elements in the data set.
 	distance := make([]float64, len(x))
 	classifierCount := make(map[float64]int)
 	classifierMap := make(map[float64]float64, len(x))
 	for i := range x {
-		// Euclidean Distance
-		distance[i] = math.Sqrt(math.Pow(in[0]-x[i], 2) + math.Pow(in[1]-y[i], 2))
+		// Calculate the distance
+		distance[i] = distanceFn(in[0], x[i], in[1], y[i])
 		// Map the distance value to the class identifier classifier
 		classifierMap[distance[i]] = classifier[i]
 	}

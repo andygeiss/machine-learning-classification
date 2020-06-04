@@ -45,7 +45,7 @@ func (p *pipeline) EvaluateWithKnn(k int, inFilename string) *pipeline {
 	for i := range data.Species {
 		given := []float64{data.PetalLength[i], data.PetalWidth[i]}
 		wanted := data.Species[i]
-		predicted := floats.Knn(given, data.PetalLength, data.PetalWidth, data.Species, k)
+		predicted := floats.Knn(given, data.PetalLength, data.PetalWidth, data.Species, k, floats.ManhattanDistance)
 		if wanted == predicted {
 			correct++
 		}
@@ -58,7 +58,7 @@ func (p *pipeline) EvaluateWithKnn(k int, inFilename string) *pipeline {
 	for i := range data.Species {
 		given := []float64{data.SepalLength[i], data.SepalWidth[i]}
 		wanted := data.Species[i]
-		predicted := floats.Knn(given, data.SepalLength, data.SepalWidth, data.Species, k)
+		predicted := floats.Knn(given, data.SepalLength, data.SepalWidth, data.Species, k, floats.ManhattanDistance)
 		if wanted == predicted {
 			correct++
 		}
@@ -238,7 +238,7 @@ func (p *pipeline) PredictWithKNN(x, y float64, k int, inFilename string) *pipel
 	}
 
 	given := []float64{x, y}
-	predicted := floats.Knn(given, data.SepalLength, data.SepalWidth, data.Species, k)
+	predicted := floats.Knn(given, data.SepalLength, data.SepalWidth, data.Species, k, floats.ManhattanDistance)
 	fmt.Printf("K-Nearest Neighbour - K: %d, Given: %v, Predicted: %s\n", k, given, species[predicted])
 
 	return p
