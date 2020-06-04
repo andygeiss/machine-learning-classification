@@ -94,3 +94,10 @@ To predict a single feature combination of Sepal length (x) and Sepal width (y) 
     Prediction time: 152.338µs
 
 The corresponding source of the command could be found [here](cmd/predict/main.go).
+
+**UPDATE**: Prediction time reduced by ~20% using [Manhattan distance-calculation](pkg/floats/knn.go).
+
+    ./predict.bin -x 3 -y 4 -k 3
+   
+    K-Nearest Neighbour - K: 3, Given: [3 4], Predicted: Iris-setosa
+    Prediction time: 127.856µs
