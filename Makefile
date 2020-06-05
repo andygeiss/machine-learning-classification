@@ -20,5 +20,5 @@ predict:
 	@upx -9 predict.bin > /dev/null
 
 setup:
-	@sudo apt-get install -y protobuf-compiler
+	@sudo apt-get install -y protobuf-compiler upx
 	@go install google.golang.org/protobuf/cmd/protoc-gen-go
