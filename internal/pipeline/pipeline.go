@@ -238,6 +238,9 @@ func (p *pipeline) PredictWithKNN(x, y float64, k int, inFilename string) *pipel
 	}
 
 	given := []float64{x, y}
+
+	floats.MinMaxScale(given)
+
 	predicted := floats.Knn(given, data.SepalLength, data.SepalWidth, data.Species, k, floats.ManhattanDistance)
 	fmt.Printf("K-Nearest Neighbour - K: %d, Given: %v, Predicted: %s\n", k, given, species[predicted])
 
